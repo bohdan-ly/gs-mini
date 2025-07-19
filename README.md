@@ -14,9 +14,9 @@ El monorepo está organizado de la siguiente manera:
 └── .env.example        # Ejemplo de configuración de variables de entorno
 ```
 
-## ⚙️ Dependencias
+## ⚙️ Paquetes
 
-Este monorepo utiliza **`npm workspaces`** para gestionar las dependencias de los diferentes paquetes.
+Este monorepo utiliza **`npm workspaces`** para gestionar los diferentes paquetes.
 
 ### Backend (`packages/backend`)
 

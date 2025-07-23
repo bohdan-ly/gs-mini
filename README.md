@@ -22,15 +22,15 @@ Este monorepo utiliza **`npm workspaces`** para gestionar los diferentes paquete
 
 El backend está construido con Express.js y utiliza las siguientes dependencias:
 
-  * **`express`**: El framework web para Node.js, utilizado para construir la API.
-  * **`cors`**: Middleware para Express que habilita Cross-Origin Resource Sharing (CORS), necesario para permitir que el frontend acceda al backend desde un origen diferente.
-  * **`dotenv`**: Carga variables de entorno desde un archivo `.env` en `process.env`. Es crucial para configurar el puerto del servidor y los orígenes permitidos.
+- **`express`**: El framework web para Node.js, utilizado para construir la API.
+- **`cors`**: Middleware para Express que habilita Cross-Origin Resource Sharing (CORS), necesario para permitir que el frontend acceda al backend desde un origen diferente.
+- **`dotenv`**: Carga variables de entorno desde un archivo `.env` en `process.env`. Es crucial para configurar el puerto del servidor y los orígenes permitidos.
 
 La idea es dar lo mínimo para levantar el servidor, y que durante el desarrollo del TP se vayan agregando las dependencias necesarias.
 
 ### Frontend (`packages/frontend`)
 
-El frontend es una aplicación de React generada con Create React App. 
+El frontend es una aplicación de React generada con Create React App.
 
 ## 🚀 Inicio Rápido
 
@@ -56,8 +56,8 @@ ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 SERVER_PORT=3001
 ```
 
-  * **`ALLOWED_ORIGINS`**: Define los orígenes permitidos para las solicitudes CORS. Asegurate de incluir la URL donde se ejecuta tu frontend (por defecto, `http://localhost:3000` para Create React App). Cuando se haga el despliegue en nube acá se deberá incluir la URL donde se desplegó el frontend.
-  * **`SERVER_PORT`**: El puerto en el que se ejecutará el servidor backend (ej. `8000`).
+- **`ALLOWED_ORIGINS`**: Define los orígenes permitidos para las solicitudes CORS. Asegurate de incluir la URL donde se ejecuta tu frontend (por defecto, `http://localhost:3000` para Create React App). Cuando se haga el despliegue en nube acá se deberá incluir la URL donde se desplegó el frontend.
+- **`SERVER_PORT`**: El puerto en el que se ejecutará el servidor backend (ej. `8000`).
 
 ### 3\. Ejecución de la Aplicación
 

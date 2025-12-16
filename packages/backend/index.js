@@ -12,10 +12,10 @@ app.use(
   }),
 );
 
-app.get("/hello", (req, res) => {
-  res.json({ message: "hello world" });
+app.get("/contact", (req, res) => {
+  res.json({ message: "✅ Дякую! Напишіть мені в телеграм - відповім сьогодні!" });
 });
 
 app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Backend escuchando en puerto ${process.env.SERVER_PORT}`);
+  console.log(`Backend listen in port ${process.env.SERVER_PORT}`);
 });

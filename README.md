@@ -1,90 +1,59 @@
-Este repositorio es la base para el Trabajo Práctico de la materia **Desarrollo de Software (DDS)** de la carrera **Ingeniería en Sistemas de Información** de la **UTN FRBA**. Se trata de un **monorepo** que integra una aplicación frontend con Create React App y un backend con Express, facilitando el desarrollo y la gestión de ambos proyectos en un único entorno.
+# Day 4 — FullStack Demo (Frontend + Backend)
 
-## 📦 Estructura del Proyecto
+This repository is a **demo sample for Day 4** of the mini-course.  
+Goal: show the **full picture of a web service** — how **Frontend → Backend → Database (optional) → Frontend** works.
 
-El monorepo está organizado de la siguiente manera:
+> It’s not a “perfect production app”. It’s a clear, beginner-friendly **fullstack example**.
 
-```
+---
+
+## What you’ll learn here
+
+- What **Frontend** does (UI + user actions)
+- What **Backend** does (API + logic)
+- How they communicate via **HTTP requests**
+- How data can be stored (optional / simple demo approach)
+
+---
+
+## Tech Stack
+
+- **Frontend:** HTML / CSS / JavaScript *(or React, if you use the React version)*
+- **Backend:** Node.js + Express
+- **Data:** in-memory array (for simplicity)  
+  *(you can replace it with a real DB later: MongoDB/PostgreSQL)*
+
+---
+
+## How it works (Big Picture)
+
+1. User clicks a button on the **Frontend**
+2. Frontend sends a request to the **Backend API**
+3. Backend processes the request (logic)
+4. Backend returns a response (JSON)
+5. Frontend shows the result in the UI
+
+---
+
+## API Endpoints (example)
+
+- `GET /api/health` — check that server is running
+- `GET /api/profile` — returns demo profile data
+- `POST /api/message` — sends a message (demo logic)
+
+> Exact endpoints may differ depending on your implementation — check the `server` folder.
+
+---
+
+## Project Structure
+
+```txt
 .
-├── packages/
-│   ├── backend/        # Servidor Express.js
-│   └── frontend/       # Aplicación React (Create React App)
-├── package.json        # Configuración del monorepo (root)
-├── README.md           # Este archivo
-└── .env.example        # Ejemplo de configuración de variables de entorno
-```
-
-## ⚙️ Paquetes
-
-Este monorepo utiliza **`npm workspaces`** para gestionar los diferentes paquetes.
-
-### Backend (`packages/backend`)
-
-El backend está construido con Express.js y utiliza las siguientes dependencias:
-
-- **`express`**: El framework web para Node.js, utilizado para construir la API.
-- **`cors`**: Middleware para Express que habilita Cross-Origin Resource Sharing (CORS), necesario para permitir que el frontend acceda al backend desde un origen diferente.
-- **`dotenv`**: Carga variables de entorno desde un archivo `.env` en `process.env`. Es crucial para configurar el puerto del servidor y los orígenes permitidos.
-
-La idea es dar lo mínimo para levantar el servidor, y que durante el desarrollo del TP se vayan agregando las dependencias necesarias.
-
-### Frontend (`packages/frontend`)
-
-El frontend es una aplicación de React generada con Create React App.
-
-## 🚀 Inicio Rápido
-
-Seguí estos pasos para poner en marcha el proyecto:
-
-### 1\. Instalación de Dependencias
-
-Desde la raíz del monorepo, ejecutá:
-
-```bash
-npm install
-```
-
-Esto instalará todas las dependencias para la raíz y para los paquetes `frontend` y `backend`.
-
-### 2\. Configuración de Variables de Entorno
-
-Crea un archivo `.env` en el directorio `packages/backend`. Puedes usar el archivo `.env.example` como plantilla.
-
-```
-# packages/backend/.env
-ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-SERVER_PORT=3001
-```
-
-- **`ALLOWED_ORIGINS`**: Define los orígenes permitidos para las solicitudes CORS. Asegurate de incluir la URL donde se ejecuta tu frontend (por defecto, `http://localhost:3000` para Create React App). Cuando se haga el despliegue en nube acá se deberá incluir la URL donde se desplegó el frontend.
-- **`SERVER_PORT`**: El puerto en el que se ejecutará el servidor backend (ej. `8000`).
-
-### 3\. Ejecución de la Aplicación
-
-Podés iniciar el frontend y el backend por separado o ambos a la vez:
-
-#### Ejecutar el Backend
-
-```bash
-npm run start:backend
-```
-
-Para el desarrollo con reinicio automático:
-
-```bash
-npm run dev:backend
-```
-
-#### Ejecutar el Frontend
-
-```bash
-npm run start:frontend
-```
-
-#### Ejecutar Ambos (Desarrollo)
-
-Para iniciar el backend en modo `dev` y el frontend simultáneamente, usá:
-
-```bash
-npm run start:dev
-```
+├── client/               # Frontend (UI)
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+├── server/               # Backend (API)
+│   ├── index.js
+│   └── package.json
+└── README.md
